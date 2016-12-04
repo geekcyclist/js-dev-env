@@ -8,7 +8,7 @@ var port = 3001;
 var app = express();
 
 //routes
-app.get('/', function(req, resp){
+app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
