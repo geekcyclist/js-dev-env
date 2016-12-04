@@ -1,0 +1,22 @@
+//express server config
+var express = require('express');
+var path = require('path');
+var open = require('open');
+
+var port = 3001;
+
+var app = express();
+
+//routes
+app.get('/', function(req, resp){
+  res.sendFile(path.join(__dirname, '../src/index.html'));
+});
+
+//startup
+app.listen(port, function(err){
+  if(err){
+    console.log(err);
+  } else {
+    open('http://localhost:' + port);
+  }
+});
